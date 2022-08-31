@@ -1,0 +1,30 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.todoContiner {
+  min-width: 375px;
+}
+
+.todoHero {
+  width: 100%;
+  min-height: 200px;
+  background-image: url(./images/bg-mobile-light.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer {
+  align-self: flex-end;
+}
