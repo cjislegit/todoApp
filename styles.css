@@ -79,13 +79,46 @@ input[type='checkbox'] {
 
 input[type='checkbox']:checked {
   background: linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-  background-image: url(/images/icon-check.svg);
-  background-position: center;
 }
 
 .newTodo input[type='text'] {
   flex-grow: 2;
   outline: none;
+}
+
+.todoList {
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 10px 0;
+  box-shadow: 5px 5px 15px gray;
+}
+
+.todo {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  padding: 0 25px;
+}
+
+.todo input[type='checkbox'] {
+  margin: 0;
+}
+
+.todo div {
+  flex-grow: 2;
+  margin-left: 15px;
+}
+
+.todoLeft {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px;
+  height: 55px;
+  align-items: center;
 }
 
 footer {
