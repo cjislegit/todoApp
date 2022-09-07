@@ -33,7 +33,7 @@ main {
   position: fixed;
   width: 100%;
   top: 50px;
-  padding: 0 30px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -95,13 +95,19 @@ input[type='checkbox']:checked {
 }
 
 .todo {
-  height: 55px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: white;
-  border-bottom: 1px solid gray;
-  padding: 0 25px;
+  border-bottom: 1px solid hsl(236, 33%, 92%);
+  padding: 0 15px;
+  font-size: small;
+  color: hsl(235, 19%, 35%);
+}
+
+.todo:nth-child(1) {
+  height: 40px;
 }
 
 .todo input[type='checkbox'] {
@@ -113,12 +119,24 @@ input[type='checkbox']:checked {
   margin-left: 15px;
 }
 
+.todo img {
+  height: 13px;
+  width: 13px;
+  filter: brightness(0) saturate(100%) invert(30%) sepia(11%) saturate(1352%)
+    hue-rotate(197deg) brightness(92%) contrast(91%);
+  -webkit-filter: brightness(0) saturate(100%) invert(30%) sepia(11%)
+    saturate(1352%) hue-rotate(197deg) brightness(92%) contrast(91%);
+}
+
 .todoLeft {
   display: flex;
   justify-content: space-between;
-  padding: 0 25px;
-  height: 55px;
+  padding: 0 15px;
   align-items: center;
+  font-size: x-small;
+  color: hsl(236, 33%, 92%);
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 footer {
