@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
+:root {
+  --primary-color: white;
+  --secondary-color: hsl(0, 0%, 98%);
+  --first-text: hsl(235, 19%, 35%);
+  --secondary-text: hsl(236, 33%, 92%);
+}
+
 html,
 body {
   margin: 0;
