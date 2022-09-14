@@ -16,7 +16,7 @@ body {
   height: 100%;
   font-family: 'Josefin Sans', sans-serif;
   min-width: 375px;
-  background-color: hsl(0, 0%, 98%);
+  background-color: var(--secondary-color);
 }
 
 body {
@@ -57,7 +57,7 @@ main {
 .newTodo {
   margin-top: 30px;
   height: 40px;
-  background-color: white;
+  background-color: var(--primary-color);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -97,7 +97,7 @@ input[type='checkbox']:checked {
 .todoList {
   margin-top: 20px;
   border-radius: 5px;
-  background-color: white;
+  background-color: var(--primary-color);
   padding: 10px 0;
   box-shadow: 5px 5px 15px gray;
 }
@@ -107,11 +107,11 @@ input[type='checkbox']:checked {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
-  border-bottom: 1px solid hsl(236, 33%, 92%);
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--secondary-text);
   padding: 0 15px;
   font-size: small;
-  color: hsl(235, 19%, 35%);
+  color: var(--first-text);
 }
 
 .todo:nth-child(1) {
@@ -142,7 +142,7 @@ input[type='checkbox']:checked {
   padding: 0 15px;
   align-items: center;
   font-size: x-small;
-  color: hsl(236, 33%, 92%);
+  color: var(--secondary-text);
   padding-top: 15px;
   padding-bottom: 10px;
 }
@@ -153,7 +153,7 @@ input[type='checkbox']:checked {
   margin-top: 20px;
   margin-top: 30px;
   height: 40px;
-  background-color: white;
+  background-color: var(--primary-color);
   border-radius: 5px;
   display: flex;
   align-items: center;
