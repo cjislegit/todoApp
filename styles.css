@@ -5,6 +5,12 @@
   --secondary-color: hsl(0, 0%, 98%);
   --first-text: hsl(235, 19%, 35%);
   --secondary-text: hsl(236, 33%, 92%);
+
+  --todo-background-color: hsl(0, 0%, 98%);
+  --body-background-color: hsl(236, 33%, 92%);
+  --light-text: hsl(233, 11%, 84%);
+  --medium-text: hsl(236, 9%, 61%);
+  --dark-text: hsl(235, 19%, 35%);
 }
 
 html,
@@ -16,7 +22,7 @@ body {
   height: 100%;
   font-family: 'Josefin Sans', sans-serif;
   min-width: 375px;
-  background-color: var(--secondary-color);
+  background-color: var(--body-background-color);
 }
 
 body {
@@ -57,7 +63,7 @@ main {
 .newTodo {
   margin-top: 30px;
   height: 40px;
-  background-color: var(--primary-color);
+  background-color: var(--todo-background-color);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -78,8 +84,8 @@ main {
 input[type='checkbox'] {
   margin: 7px;
   border-radius: 50%;
-  border: 1px solid #ddd;
-  background-color: #fff;
+  border: 1px solid var(--light-text);
+  background-color: var(--todo-background-color);
   height: 20px;
   width: 20px;
   -webkit-appearance: none;
@@ -92,12 +98,13 @@ input[type='checkbox']:checked {
 .newTodo input[type='text'] {
   flex-grow: 2;
   outline: none;
+  background-color: var(--todo-background-color);
 }
 
 .todoList {
   margin-top: 20px;
   border-radius: 5px;
-  background-color: var(--primary-color);
+  background-color: var(--todo-background-color);
   padding: 10px 0;
   box-shadow: 5px 5px 15px gray;
 }
@@ -107,11 +114,11 @@ input[type='checkbox']:checked {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--primary-color);
-  border-bottom: 1px solid var(--secondary-text);
+  background-color: var(--todo-background-color);
+  border-bottom: 1px solid var(--light-text);
   padding: 0 15px;
   font-size: small;
-  color: var(--first-text);
+  color: var(--dark-text);
 }
 
 .todo:nth-child(1) {
@@ -142,7 +149,7 @@ input[type='checkbox']:checked {
   padding: 0 15px;
   align-items: center;
   font-size: x-small;
-  color: var(--secondary-text);
+  color: var(--medium-text);
   padding-top: 15px;
   padding-bottom: 10px;
 }
@@ -153,7 +160,7 @@ input[type='checkbox']:checked {
   margin-top: 20px;
   margin-top: 30px;
   height: 40px;
-  background-color: var(--primary-color);
+  background-color: var(--todo-background-color);
   border-radius: 5px;
   display: flex;
   align-items: center;
