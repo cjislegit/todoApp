@@ -50,7 +50,7 @@ main {
   top: 95px;
   padding: 0 20px;
   box-sizing: border-box;
-  max-width: 650px;
+  max-width: 500px;
   transform: translate(-50%, -50px);
 }
 
