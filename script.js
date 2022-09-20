@@ -3,7 +3,7 @@ const moon = document.getElementById('moon');
 const themeChange = () => {
   const root = document.documentElement;
   const icon = document.getElementById('moon');
-  const heroBackground = document.getElementsByClassName('todoHero');
+  const heroBackground = document.getElementById('todoHero');
 
   //Gets the value of the css var --primary-color
   let theme = getComputedStyle(root).getPropertyValue(
@@ -17,10 +17,7 @@ const themeChange = () => {
     root.style.setProperty('--light-text', ' hsl(233, 14%, 35%)');
     root.style.setProperty('--medium-text', ' hsl(234, 11%, 52%)');
     root.style.setProperty('--dark-text', ' hsl(234, 39%, 85%)');
-    heroBackground.style.setProperty(
-      'background-image',
-      'url(./images/bg-mobile-dark.jpg)'
-    );
+    heroBackground.style.backgroundImage = 'url(./images/bg-mobile-dark.jpg)';
   } else {
     icon.src = '/images/icon-moon.svg';
     root.style.setProperty('--todo-background-color', ' hsl(0, 0%, 98%)');
@@ -28,6 +25,7 @@ const themeChange = () => {
     root.style.setProperty('--light-text', ' hsl(233, 11%, 84%)');
     root.style.setProperty('--medium-text', ' hsl(236, 9%, 61%)');
     root.style.setProperty('--dark-text', ' hsl(235, 19%, 35%)');
+    heroBackground.style.backgroundImage = 'url(./images/bg-mobile-light.jpg)';
   }
 };
 
