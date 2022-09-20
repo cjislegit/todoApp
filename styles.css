@@ -106,7 +106,6 @@ input[type='checkbox']:checked {
   border-radius: 5px;
   background-color: var(--todo-background-color);
   padding: 10px 0;
-  box-shadow: 5px 5px 15px gray;
 }
 
 .todo {
@@ -164,7 +163,6 @@ input[type='checkbox']:checked {
   border-radius: 5px;
   display: flex;
   align-items: center;
-  box-shadow: 5px 5px 15px gray;
   color: var(--medium-text);
 }
 
