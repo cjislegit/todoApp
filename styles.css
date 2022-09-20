@@ -46,9 +46,12 @@ body {
 main {
   position: fixed;
   width: 100%;
-  top: 50px;
+  left: 50%;
+  top: 95px;
   padding: 0 20px;
   box-sizing: border-box;
+  max-width: 650px;
+  transform: translate(-50%, -50px);
 }
 
 .title {
