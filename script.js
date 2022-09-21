@@ -1,14 +1,12 @@
 const moon = document.getElementById('moon');
+const root = document.documentElement;
+
+//Gets the value of the css var --primary-color
+let theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
 
 const themeChange = () => {
-  const root = document.documentElement;
   const icon = document.getElementById('moon');
   const heroBackground = document.getElementById('todoHero');
-
-  //Gets the value of the css var --primary-color
-  let theme = getComputedStyle(root).getPropertyValue(
-    '--todo-background-color'
-  );
 
   if (theme === 'hsl(0, 0%, 98%)') {
     icon.src = '/images/icon-sun.svg';
@@ -27,6 +25,7 @@ const themeChange = () => {
     root.style.setProperty('--dark-text', ' hsl(235, 19%, 35%)');
     heroBackground.style.backgroundImage = 'url(./images/bg-mobile-light.jpg)';
   }
+  theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
 };
 
 moon.addEventListener('click', themeChange);
