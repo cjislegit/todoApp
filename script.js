@@ -6,7 +6,6 @@ let theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
 
 const themeChange = () => {
   const icon = document.getElementById('moon');
-  const heroBackground = document.getElementById('todoHero');
 
   if (theme === 'hsl(0, 0%, 98%)') {
     icon.src = '/images/icon-sun.svg';
@@ -15,7 +14,7 @@ const themeChange = () => {
     root.style.setProperty('--light-text', ' hsl(233, 14%, 35%)');
     root.style.setProperty('--medium-text', ' hsl(234, 11%, 52%)');
     root.style.setProperty('--dark-text', ' hsl(234, 39%, 85%)');
-    heroBackground.style.backgroundImage = 'url(./images/bg-mobile-dark.jpg)';
+    backgroundChange();
   } else {
     icon.src = '/images/icon-moon.svg';
     root.style.setProperty('--todo-background-color', ' hsl(0, 0%, 98%)');
@@ -23,7 +22,29 @@ const themeChange = () => {
     root.style.setProperty('--light-text', ' hsl(233, 11%, 84%)');
     root.style.setProperty('--medium-text', ' hsl(236, 9%, 61%)');
     root.style.setProperty('--dark-text', ' hsl(235, 19%, 35%)');
-    heroBackground.style.backgroundImage = 'url(./images/bg-mobile-light.jpg)';
+    backgroundChange();
+  }
+};
+
+const backgroundChange = () => {
+  let screenWidth = window.innerWidth;
+  const heroBackground = document.getElementById('todoHero');
+
+  if (theme === 'hsl(0, 0%, 98%)') {
+    if (screenWidth < 600) {
+      heroBackground.style.backgroundImage = 'url(./images/bg-mobile-dark.jpg)';
+    } else {
+      heroBackground.style.backgroundImage =
+        'url(./images/bg-desktop-dark.jpg)';
+    }
+  } else {
+    if (screenWidth < 600) {
+      heroBackground.style.backgroundImage =
+        'url(./images/bg-mobile-light.jpg)';
+    } else {
+      heroBackground.style.backgroundImage =
+        'url(./images/bg-desktop-light.jpg)';
+    }
   }
   theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
 };
