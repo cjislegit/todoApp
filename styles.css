@@ -23,12 +23,18 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   min-width: 375px;
   background-color: var(--body-background-color);
+  display: flex;
+}
+
+html {
+  justify-content: center;
 }
 
 body {
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 1440px;
+  align-self: center;
 }
 
 .todoContiner {
