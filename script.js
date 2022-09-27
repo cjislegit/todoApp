@@ -27,24 +27,21 @@ const themeChange = () => {
 };
 
 const backgroundChange = () => {
-  let screenWidth = window.innerWidth;
-  const heroBackground = document.getElementById('todoHero');
-
   if (theme === 'hsl(0, 0%, 98%)') {
-    if (screenWidth < 600) {
-      heroBackground.style.backgroundImage = 'url(./images/bg-mobile-dark.jpg)';
-    } else {
-      heroBackground.style.backgroundImage =
-        'url(./images/bg-desktop-dark.jpg)';
-    }
+    root.style.setProperty('--mobile-hero', 'url(./images/bg-mobile-dark.jpg)');
+    root.style.setProperty(
+      '--desktop-hero',
+      'url(./images/bg-desktop-dark.jpg)'
+    );
   } else {
-    if (screenWidth < 600) {
-      heroBackground.style.backgroundImage =
-        'url(./images/bg-mobile-light.jpg)';
-    } else {
-      heroBackground.style.backgroundImage =
-        'url(./images/bg-desktop-light.jpg)';
-    }
+    root.style.setProperty(
+      '--mobile-hero',
+      'url(./images/bg-mobile-light.jpg)'
+    );
+    root.style.setProperty(
+      '--desktop-hero',
+      'url(./images/bg-desktop-light.jpg)'
+    );
   }
   theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
 };

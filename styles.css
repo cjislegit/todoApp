@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
 :root {
-  --primary-color: white;
-  --secondary-color: hsl(0, 0%, 98%);
-  --first-text: hsl(235, 19%, 35%);
-  --secondary-text: hsl(236, 33%, 92%);
-
   --todo-background-color: hsl(0, 0%, 98%);
   --body-background-color: hsl(236, 33%, 92%);
   --light-text: hsl(233, 11%, 84%);
   --medium-text: hsl(236, 9%, 61%);
   --dark-text: hsl(235, 19%, 35%);
+  --desktop-hero: url(./images/bg-desktop-light.jpg);
+  --mobile-hero: url(./images/bg-mobile-light.jpg);
 }
 
 html,
@@ -44,14 +41,14 @@ body {
 .todoHero {
   width: 100%;
   min-height: 200px;
-  background-image: url(./images/bg-mobile-light.jpg);
+  background-image: var(--mobile-hero);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 @media only screen and (min-width: 600px) {
   .todoHero {
-    background-image: url(./images/bg-desktop-light.jpg);
+    background-image: var(--desktop-hero);
   }
 }
 
