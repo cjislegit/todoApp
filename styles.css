@@ -8,6 +8,7 @@
   --dark-text: hsl(235, 19%, 35%);
   --desktop-hero: url(./images/bg-desktop-light.jpg);
   --mobile-hero: url(./images/bg-mobile-light.jpg);
+  --selected-status: hsl(220, 98%, 61%);
 }
 
 html,
@@ -176,6 +177,12 @@ input[type='checkbox']:checked {
   display: flex;
   align-items: center;
   color: var(--medium-text);
+}
+
+.first:hover,
+.middle:hover,
+.last:hover {
+  color: var(--dark-text);
 }
 
 .todoFilter .middle {
