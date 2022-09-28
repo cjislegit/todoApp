@@ -51,6 +51,14 @@ body {
   .todoHero {
     background-image: var(--desktop-hero);
   }
+
+  .todo:hover > .delete {
+    display: block;
+  }
+
+  .delete {
+    display: none;
+  }
 }
 
 main {
