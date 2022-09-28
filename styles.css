@@ -54,6 +54,7 @@ body {
 
   .todo:hover > .delete {
     display: block;
+    cursor: pointer;
   }
 
   .delete {
