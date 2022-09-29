@@ -47,21 +47,6 @@ body {
   background-size: cover;
 }
 
-@media only screen and (min-width: 600px) {
-  .todoHero {
-    background-image: var(--desktop-hero);
-  }
-
-  .todo:hover > .delete {
-    display: block;
-    cursor: pointer;
-  }
-
-  .delete {
-    display: none;
-  }
-}
-
 main {
   position: fixed;
   width: 100%;
@@ -112,19 +97,6 @@ input[type='checkbox'] {
   width: 20px;
   -webkit-appearance: none;
   cursor: pointer;
-}
-
-.checkbox:hover {
-  border-image: linear-gradient(
-    to bottom right,
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
-  );
-  border-image-slice: 5;
-}
-
-.checkbox:hover::after {
-  border-radius: 50%;
 }
 
 input[type='checkbox']:checked {
@@ -189,6 +161,10 @@ input[type='checkbox']:checked {
   padding-bottom: 10px;
 }
 
+.desktopFilters {
+  display: none;
+}
+
 .todoFilter {
   display: flex;
   justify-content: center;
@@ -216,4 +192,30 @@ input[type='checkbox']:checked {
 
 footer {
   align-self: flex-end;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 600px) {
+  .todoHero {
+    background-image: var(--desktop-hero);
+  }
+
+  .todo:hover > .delete {
+    display: block;
+    cursor: pointer;
+  }
+
+  .delete {
+    display: none;
+  }
+
+  .desktopFilters {
+    display: flex;
+    width: 150px;
+    justify-content: space-around;
+  }
+
+  .todoFilter {
+    display: none;
+  }
 }
