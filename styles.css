@@ -190,6 +190,10 @@ input[type='checkbox']:checked {
   margin-right: 30px;
 }
 
+.activeFilter {
+  color: var(--selected-status);
+}
+
 footer {
   align-self: flex-end;
 }
@@ -213,6 +217,10 @@ footer {
     display: flex;
     width: 150px;
     justify-content: space-around;
+  }
+
+  .completed:hover {
+    cursor: pointer;
   }
 
   .todoFilter {
