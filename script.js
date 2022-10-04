@@ -1,5 +1,6 @@
 const moon = document.getElementById('moon');
-const filter = document.getElementById('desktopFilters');
+const desktopFilters = document.getElementById('desktopFilters');
+const mobileFilters = document.getElementById('mobileFilters');
 const root = document.documentElement;
 
 //Gets the value of the css var --primary-color
@@ -47,7 +48,7 @@ const backgroundChange = () => {
   theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
 };
 
-const filters = (e) => {
+const desktopFilterSelector = (e) => {
   let allFilters = document.querySelectorAll('.filters');
 
   allFilters.forEach((filter) => {
@@ -59,5 +60,18 @@ const filters = (e) => {
   });
 };
 
+const mobileFilterSelector = (e) => {
+  let allFilters = document.querySelectorAll('.mobileFilters');
+
+  allFilters.forEach((filter) => {
+    if (filter.id === e.target.id) {
+      filter.classList.add('activeFilter');
+    } else {
+      filter.classList.remove('activeFilter');
+    }
+  });
+};
+
 moon.addEventListener('click', themeChange);
-filter.addEventListener('click', filters);
+desktopFilters.addEventListener('click', desktopFilterSelector);
+mobileFilters.addEventListener('click', mobileFilterSelector);
