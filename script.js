@@ -2,6 +2,11 @@ const moon = document.getElementById('moon');
 const desktopFilters = document.getElementById('desktopFilters');
 const mobileFilters = document.getElementById('mobileFilters');
 const root = document.documentElement;
+const todos = [
+  { text: 'this is a todo', status: 'active' },
+  { text: 'this is another todo', status: 'active' },
+  { text: 'this is an inactive todo', status: 'completed' },
+];
 
 //Gets the value of the css var --primary-color
 let theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
@@ -72,6 +77,14 @@ const mobileFilterSelector = (e) => {
   });
 };
 
+const listTodos = () => {
+  const todoContainer = document.getElementById('todoContainer');
+  todos.forEach((todo) => {
+    todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" /><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+  });
+};
+
 moon.addEventListener('click', themeChange);
 desktopFilters.addEventListener('click', desktopFilterSelector);
 mobileFilters.addEventListener('click', mobileFilterSelector);
+listTodos();
