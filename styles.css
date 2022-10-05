@@ -178,14 +178,14 @@ input[type='checkbox']:checked {
   color: var(--medium-text);
 }
 
-#first:hover,
-#middle:hover,
-#last:hover {
+#all:hover,
+#active:hover,
+#completed:hover {
   color: var(--dark-text);
   cursor: pointer;
 }
 
-.todoFilter #mobileMiddle {
+.todoFilter #mobileActive {
   margin-left: 30px;
   margin-right: 30px;
 }

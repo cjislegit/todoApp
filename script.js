@@ -7,6 +7,7 @@ const todos = [
   { text: 'this is another todo', status: 'active' },
   { text: 'this is an inactive todo', status: 'completed' },
 ];
+let activeFilter = 'all';
 
 //Gets the value of the css var --primary-color
 let theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
@@ -55,6 +56,7 @@ const backgroundChange = () => {
 
 const desktopFilterSelector = (e) => {
   let allFilters = document.querySelectorAll('.filters');
+  activeFilter = e.target.id;
 
   allFilters.forEach((filter) => {
     if (filter.id === e.target.id) {
@@ -63,10 +65,12 @@ const desktopFilterSelector = (e) => {
       filter.classList.remove('activeFilter');
     }
   });
+  listTodos();
 };
 
 const mobileFilterSelector = (e) => {
   let allFilters = document.querySelectorAll('.mobileFilters');
+  activeFilter = e.target.id;
 
   allFilters.forEach((filter) => {
     if (filter.id === e.target.id) {
@@ -79,9 +83,29 @@ const mobileFilterSelector = (e) => {
 
 const listTodos = () => {
   const todoContainer = document.getElementById('todoContainer');
-  todos.forEach((todo) => {
-    todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" /><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
-  });
+
+  todoContainer.innerHTML = '';
+
+  if (activeFilter === 'active' || activeFilter === 'mobileActive') {
+    let activeTodos = todos.filter((todo) => todo.status === 'active');
+
+    activeTodos.forEach((todo) => {
+      todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" /><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+    });
+  } else if (
+    activeFilter === 'completed' ||
+    activeFilter === 'mobileCompleted'
+  ) {
+    let completedTodos = todos.filter((todo) => todo.status === 'completed');
+
+    completedTodos.forEach((todo) => {
+      todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" /><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+    });
+  } else {
+    todos.forEach((todo) => {
+      todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" /><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+    });
+  }
 };
 
 moon.addEventListener('click', themeChange);
