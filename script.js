@@ -99,11 +99,15 @@ const listTodos = () => {
     let completedTodos = todos.filter((todo) => todo.status === 'completed');
 
     completedTodos.forEach((todo) => {
-      todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" /><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+      todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" checked/><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   } else {
     todos.forEach((todo) => {
-      todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" /><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+      todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" ${
+        todo.status === 'completed' ? 'checked' : null
+      } /><div>${
+        todo.text
+      }</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   }
 };
