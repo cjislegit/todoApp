@@ -1,11 +1,12 @@
 const moon = document.getElementById('moon');
 const desktopFilters = document.getElementById('desktopFilters');
 const mobileFilters = document.getElementById('mobileFilters');
+const todoCheckbox = document.getElementById('todoList');
 const root = document.documentElement;
 const todos = [
-  { text: 'this is a todo', status: 'active' },
-  { text: 'this is another todo', status: 'active' },
-  { text: 'this is an inactive todo', status: 'completed' },
+  { text: 'this is a todo', status: 'active', id: 1 },
+  { text: 'this is another todo', status: 'active', id: 2 },
+  { text: 'this is an inactive todo', status: 'completed', id: 3 },
 ];
 let activeFilter = 'all';
 
@@ -90,7 +91,7 @@ const listTodos = () => {
     let activeTodos = todos.filter((todo) => todo.status === 'active');
 
     activeTodos.forEach((todo) => {
-      todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" /><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+      todoContainer.innerHTML += `<div class="todo"><input id="${todo.id}" class="checkbox" type="checkbox" /><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   } else if (
     activeFilter === 'completed' ||
@@ -99,12 +100,14 @@ const listTodos = () => {
     let completedTodos = todos.filter((todo) => todo.status === 'completed');
 
     completedTodos.forEach((todo) => {
-      todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" checked/><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+      todoContainer.innerHTML += `<div id="${todo.id}" class="todo"><input class="checkbox" type="checkbox" checked/><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   } else {
     todos.forEach((todo) => {
-      todoContainer.innerHTML += `<div class="todo"><input class="checkbox" type="checkbox" ${
-        todo.status === 'completed' ? 'checked' : null
+      todoContainer.innerHTML += `<div class="todo"><input id="${
+        todo.id
+      }" class="checkbox" type="checkbox" ${
+        todo.status === 'completed' ? 'checked' : ''
       } /><div>${
         todo.text
       }</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
@@ -112,7 +115,16 @@ const listTodos = () => {
   }
 };
 
+const todoStatusToggle = (e) => {
+  todos.forEach((todo) => {
+    if (todo.id == e.target.id) {
+      todo.status = todo.status === 'active' ? 'completed' : 'active';
+    }
+  });
+};
+
 moon.addEventListener('click', themeChange);
 desktopFilters.addEventListener('click', desktopFilterSelector);
 mobileFilters.addEventListener('click', mobileFilterSelector);
+todoCheckbox.addEventListener('click', todoStatusToggle);
 listTodos();
