@@ -113,6 +113,7 @@ const listTodos = () => {
       }"class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   }
+  updateTodoCounter();
 };
 
 const todoStatusToggle = (e) => {
@@ -132,6 +133,11 @@ const deleteTodo = (e) => {
     });
   }
   listTodos();
+};
+
+const updateTodoCounter = () => {
+  let todoCounter = document.getElementById('todoCounter');
+  todoCounter.innerHTML = todos.length;
 };
 
 moon.addEventListener('click', themeChange);
