@@ -3,7 +3,7 @@ const desktopFilters = document.getElementById('desktopFilters');
 const mobileFilters = document.getElementById('mobileFilters');
 const todoCheckbox = document.getElementById('todoList');
 const root = document.documentElement;
-const todos = [
+let todos = [
   { text: 'this is a todo', status: 'active', id: 1 },
   { text: 'this is another todo', status: 'active', id: 2 },
   { text: 'this is an inactive todo', status: 'completed', id: 3 },
@@ -91,7 +91,7 @@ const listTodos = () => {
     let activeTodos = todos.filter((todo) => todo.status === 'active');
 
     activeTodos.forEach((todo) => {
-      todoContainer.innerHTML += `<div class="todo"><input id="${todo.id}" class="checkbox" type="checkbox" /><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+      todoContainer.innerHTML += `<div class="todo"><input id="${todo.id}" class="checkbox" type="checkbox" /><div>${todo.text}</div><img id="${todo.id}" class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   } else if (
     activeFilter === 'completed' ||
@@ -100,7 +100,7 @@ const listTodos = () => {
     let completedTodos = todos.filter((todo) => todo.status === 'completed');
 
     completedTodos.forEach((todo) => {
-      todoContainer.innerHTML += `<div id="${todo.id}" class="todo"><input class="checkbox" type="checkbox" checked/><div>${todo.text}</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+      todoContainer.innerHTML += `<div id="${todo.id}" class="todo"><input class="checkbox" type="checkbox" checked/><div>${todo.text}</div><img id="${todo.id}" class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   } else {
     todos.forEach((todo) => {
@@ -108,9 +108,9 @@ const listTodos = () => {
         todo.id
       }" class="checkbox" type="checkbox" ${
         todo.status === 'completed' ? 'checked' : ''
-      } /><div>${
-        todo.text
-      }</div><img class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+      } /><div>${todo.text}</div><img id="${
+        todo.id
+      }"class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   }
 };
@@ -123,8 +123,20 @@ const todoStatusToggle = (e) => {
   });
 };
 
+const deleteTodo = (e) => {
+  if (e.target.classList[0] === 'delete') {
+    todos.forEach((todo) => {
+      if (todo.id == e.target.id) {
+        todos = todos.filter((item) => item.id != e.target.id);
+      }
+    });
+  }
+  listTodos();
+};
+
 moon.addEventListener('click', themeChange);
 desktopFilters.addEventListener('click', desktopFilterSelector);
 mobileFilters.addEventListener('click', mobileFilterSelector);
 todoCheckbox.addEventListener('click', todoStatusToggle);
+todoCheckbox.addEventListener('click', deleteTodo);
 listTodos();
