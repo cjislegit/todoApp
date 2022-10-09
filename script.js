@@ -2,6 +2,7 @@ const moon = document.getElementById('moon');
 const desktopFilters = document.getElementById('desktopFilters');
 const mobileFilters = document.getElementById('mobileFilters');
 const todoCheckbox = document.getElementById('todoList');
+const clearCompleted = document.getElementById('clearCompleted');
 const root = document.documentElement;
 let todos = [
   { text: 'this is a todo', status: 'active', id: 1 },
@@ -140,9 +141,15 @@ const updateTodoCounter = () => {
   todoCounter.innerHTML = todos.length;
 };
 
+const clearTodos = () => {
+  todos = todos.filter((todo) => todo.status !== 'completed');
+  listTodos();
+};
+
 moon.addEventListener('click', themeChange);
 desktopFilters.addEventListener('click', desktopFilterSelector);
 mobileFilters.addEventListener('click', mobileFilterSelector);
 todoCheckbox.addEventListener('click', todoStatusToggle);
 todoCheckbox.addEventListener('click', deleteTodo);
+clearCompleted.addEventListener('click', clearTodos);
 listTodos();
