@@ -3,6 +3,7 @@ const desktopFilters = document.getElementById('desktopFilters');
 const mobileFilters = document.getElementById('mobileFilters');
 const todoCheckbox = document.getElementById('todoList');
 const clearCompleted = document.getElementById('clearCompleted');
+const todoForm = document.getElementById('todoForm');
 const root = document.documentElement;
 let todos = [
   { text: 'this is a todo', status: 'active', id: 1 },
@@ -146,10 +147,23 @@ const clearTodos = () => {
   listTodos();
 };
 
+const addTodo = (e) => {
+  e.preventDefault();
+  let newTodoValue = document.getElementById('newTodoValue');
+  console.log(newTodoValue.value);
+  todos.push({
+    text: newTodoValue.value,
+    status: 'active',
+    id: Math.floor(Math.random() * 1000) + 1,
+  });
+  listTodos();
+};
+
 moon.addEventListener('click', themeChange);
 desktopFilters.addEventListener('click', desktopFilterSelector);
 mobileFilters.addEventListener('click', mobileFilterSelector);
 todoCheckbox.addEventListener('click', todoStatusToggle);
 todoCheckbox.addEventListener('click', deleteTodo);
 clearCompleted.addEventListener('click', clearTodos);
+todoForm.addEventListener('submit', addTodo);
 listTodos();
