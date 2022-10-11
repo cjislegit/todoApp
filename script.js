@@ -15,6 +15,7 @@ let activeFilter = 'all';
 //Gets the value of the css var --primary-color
 let theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
 
+//Changes the CSS vars based on the active theme
 const themeChange = () => {
   const icon = document.getElementById('moon');
 
@@ -37,6 +38,7 @@ const themeChange = () => {
   }
 };
 
+//Changes background img based on active theme
 const backgroundChange = () => {
   if (theme === 'hsl(0, 0%, 98%)') {
     root.style.setProperty('--mobile-hero', 'url(./images/bg-mobile-dark.jpg)');
@@ -57,6 +59,7 @@ const backgroundChange = () => {
   theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
 };
 
+//Sets the active filster class for desktop
 const desktopFilterSelector = (e) => {
   let allFilters = document.querySelectorAll('.filters');
   activeFilter = e.target.id;
@@ -71,6 +74,7 @@ const desktopFilterSelector = (e) => {
   listTodos();
 };
 
+//Sets the active filster class for mobile
 const mobileFilterSelector = (e) => {
   let allFilters = document.querySelectorAll('.mobileFilters');
   activeFilter = e.target.id;
@@ -84,6 +88,7 @@ const mobileFilterSelector = (e) => {
   });
 };
 
+//Filters todos based on the active filter
 const listTodos = () => {
   const todoContainer = document.getElementById('todoContainer');
 
@@ -118,6 +123,7 @@ const listTodos = () => {
   updateTodoCounter();
 };
 
+//Sets todo to completed/incompleted when todo is clicked
 const todoStatusToggle = (e) => {
   todos.forEach((todo) => {
     if (todo.id == e.target.id) {
@@ -126,6 +132,7 @@ const todoStatusToggle = (e) => {
   });
 };
 
+//Deletes todo when x icon is clicked
 const deleteTodo = (e) => {
   if (e.target.classList[0] === 'delete') {
     todos.forEach((todo) => {
@@ -137,6 +144,7 @@ const deleteTodo = (e) => {
   listTodos();
 };
 
+//Updates the todo counter to reflect active todos
 const updateTodoCounter = () => {
   let todoCounter = document.getElementById('todoCounter');
   let todosLeft = 0;
@@ -146,11 +154,13 @@ const updateTodoCounter = () => {
   todoCounter.innerHTML = todosLeft;
 };
 
+//Delete all completed todos when clear completed is clicked
 const clearTodos = () => {
   todos = todos.filter((todo) => todo.status !== 'completed');
   listTodos();
 };
 
+//Adds a new todo to the list
 const addTodo = (e) => {
   e.preventDefault();
   let newTodoValue = document.getElementById('newTodoValue');
