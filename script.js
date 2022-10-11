@@ -139,7 +139,11 @@ const deleteTodo = (e) => {
 
 const updateTodoCounter = () => {
   let todoCounter = document.getElementById('todoCounter');
-  todoCounter.innerHTML = todos.length;
+  let todosLeft = 0;
+
+  todos.forEach((todo) => (todo.status === 'active' ? todosLeft++ : null));
+
+  todoCounter.innerHTML = todosLeft;
 };
 
 const clearTodos = () => {
