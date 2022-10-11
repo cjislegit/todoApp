@@ -195,7 +195,7 @@ input[type='checkbox']:checked {
 }
 
 footer {
-  align-self: flex-end;
+  align-self: center;
 }
 
 /* Desktop Styles */
