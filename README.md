@@ -10,9 +10,6 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -32,7 +29,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot of the todo website](./images/todoScreenshot.png)
 
 ### Links
 
@@ -51,6 +48,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Carlos Ramirez](https://cjramirez.tech/)
+- Frontend Mentor - [@cjislegit](https://www.frontendmentor.io/profile/cjislegit)
+- Twitter - [@cjram11](https://twitter.com/cjram11)
