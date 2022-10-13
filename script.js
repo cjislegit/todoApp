@@ -19,7 +19,7 @@ let theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
 const themeChange = () => {
   const icon = document.getElementById('moon');
 
-  if (theme === 'hsl(0, 0%, 98%)') {
+  if (theme === ' hsl(0, 0%, 98%)') {
     icon.src = '/images/icon-sun.svg';
     root.style.setProperty('--todo-background-color', ' hsl(235, 24%, 19%)');
     root.style.setProperty('--body-background-color', ' hsl(235, 21%, 11%)');
