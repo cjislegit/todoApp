@@ -19,7 +19,7 @@ let theme = getComputedStyle(root).getPropertyValue('--todo-background-color');
 const themeChange = () => {
   const icon = document.getElementById('moon');
 
-  if (theme === ' hsl(0, 0%, 98%)') {
+  if (theme === 'hsl(0, 0%, 98%)' || theme === ' hsl(0, 0%, 98%)') {
     icon.src = '/images/icon-sun.svg';
     root.style.setProperty('--todo-background-color', ' hsl(235, 24%, 19%)');
     root.style.setProperty('--body-background-color', ' hsl(235, 21%, 11%)');
@@ -40,7 +40,7 @@ const themeChange = () => {
 
 //Changes background img based on active theme
 const backgroundChange = () => {
-  if (theme === 'hsl(0, 0%, 98%)') {
+  if (theme === 'hsl(0, 0%, 98%)' || theme === ' hsl(0, 0%, 98%)') {
     root.style.setProperty('--mobile-hero', 'url(./images/bg-mobile-dark.jpg)');
     root.style.setProperty(
       '--desktop-hero',
