@@ -195,8 +195,12 @@ input[type='checkbox']:checked {
 }
 
 footer {
-  align-self: center;
   color: var(--dark-text);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 /* Desktop Styles */
