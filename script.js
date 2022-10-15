@@ -20,7 +20,7 @@ const themeChange = () => {
   const icon = document.getElementById('moon');
 
   if (theme === 'hsl(0, 0%, 98%)' || theme === ' hsl(0, 0%, 98%)') {
-    icon.src = '/images/icon-sun.svg';
+    icon.src = './images/icon-sun.svg';
     root.style.setProperty('--todo-background-color', ' hsl(235, 24%, 19%)');
     root.style.setProperty('--body-background-color', ' hsl(235, 21%, 11%)');
     root.style.setProperty('--light-text', ' hsl(233, 14%, 35%)');
@@ -28,7 +28,7 @@ const themeChange = () => {
     root.style.setProperty('--dark-text', ' hsl(234, 39%, 85%)');
     backgroundChange();
   } else {
-    icon.src = '/images/icon-moon.svg';
+    icon.src = './images/icon-moon.svg';
     root.style.setProperty('--todo-background-color', ' hsl(0, 0%, 98%)');
     root.style.setProperty('--body-background-color', ' hsl(236, 33%, 92%)');
     root.style.setProperty('--light-text', ' hsl(233, 11%, 84%)');
@@ -98,7 +98,7 @@ const listTodos = () => {
     let activeTodos = todos.filter((todo) => todo.status === 'active');
 
     activeTodos.forEach((todo) => {
-      todoContainer.innerHTML += `<div class="todo"><input id="${todo.id}" class="checkbox" type="checkbox" /><div>${todo.text}</div><img id="${todo.id}" class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+      todoContainer.innerHTML += `<div class="todo"><input id="${todo.id}" class="checkbox" type="checkbox" /><div>${todo.text}</div><img id="${todo.id}" class="delete" src="./images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   } else if (
     activeFilter === 'completed' ||
@@ -107,7 +107,7 @@ const listTodos = () => {
     let completedTodos = todos.filter((todo) => todo.status === 'completed');
 
     completedTodos.forEach((todo) => {
-      todoContainer.innerHTML += `<div id="${todo.id}" class="todo"><input class="checkbox" type="checkbox" checked/><div>${todo.text}</div><img id="${todo.id}" class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+      todoContainer.innerHTML += `<div id="${todo.id}" class="todo"><input class="checkbox" type="checkbox" checked/><div>${todo.text}</div><img id="${todo.id}" class="delete" src="./images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   } else {
     todos.forEach((todo) => {
@@ -117,7 +117,7 @@ const listTodos = () => {
         todo.status === 'completed' ? 'checked' : ''
       } /><div>${todo.text}</div><img id="${
         todo.id
-      }"class="delete" src="/images/icon-cross.svg" alt="x to delete todo" /></div>`;
+      }"class="delete" src="./images/icon-cross.svg" alt="x to delete todo" /></div>`;
     });
   }
   updateTodoCounter();
