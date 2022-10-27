@@ -1,3 +1,17 @@
+<?php
+require_once "config/heroku_db_local.php";
+require_once "classes/todo.php";
+
+//Istantiate DB & connet
+$database = new Database();
+$db = $database->connect();
+
+//New todo object
+$newTodo = new Todo($db);
+
+var_dump($newTodo->read());
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
