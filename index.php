@@ -40,7 +40,13 @@ var_dump($newTodo->read());
             </form>
         </div>
         <div id="todoList" class="todoList">
-            <form id="todoContainer" action=""></form>
+            <form id="todoContainer" action="">
+                <?php
+foreach ($newTodo->read() as $key => $value) {
+
+}
+?>
+            </form>
             <div class="todoLeft">
                 <div><span id="todoCounter"></span> items left</div>
                 <div id="desktopFilters" class="desktopFilters">
