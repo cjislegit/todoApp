@@ -28,7 +28,7 @@
         $stmt->execute();
 
         //Make result an array
-        $todos = $stmt->fetch(PDO::FETCH_ASSOC);
+        $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         return $todos;
     }
