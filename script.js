@@ -88,40 +88,40 @@ const mobileFilterSelector = (e) => {
   });
 };
 
-//Filters todos based on the active filter
-const listTodos = () => {
-  const todoContainer = document.getElementById('todoContainer');
+// Filters todos based on the active filter
+// const listTodos = () => {
+//   const todoContainer = document.getElementById('todoContainer');
 
-  todoContainer.innerHTML = '';
+//   todoContainer.innerHTML = '';
 
-  if (activeFilter === 'active' || activeFilter === 'mobileActive') {
-    let activeTodos = todos.filter((todo) => todo.status === 'active');
+//   if (activeFilter === 'active' || activeFilter === 'mobileActive') {
+//     let activeTodos = todos.filter((todo) => todo.status === 'active');
 
-    activeTodos.forEach((todo) => {
-      todoContainer.innerHTML += `<div class="todo"><input id="${todo.id}" class="checkbox" type="checkbox" /><div>${todo.text}</div><img id="${todo.id}" class="delete" src="./images/icon-cross.svg" alt="x to delete todo" /></div>`;
-    });
-  } else if (
-    activeFilter === 'completed' ||
-    activeFilter === 'mobileCompleted'
-  ) {
-    let completedTodos = todos.filter((todo) => todo.status === 'completed');
+//     activeTodos.forEach((todo) => {
+//       todoContainer.innerHTML += `<div class="todo"><input id="${todo.id}" class="checkbox" type="checkbox" /><div>${todo.text}</div><img id="${todo.id}" class="delete" src="./images/icon-cross.svg" alt="x to delete todo" /></div>`;
+//     });
+//   } else if (
+//     activeFilter === 'completed' ||
+//     activeFilter === 'mobileCompleted'
+//   ) {
+//     let completedTodos = todos.filter((todo) => todo.status === 'completed');
 
-    completedTodos.forEach((todo) => {
-      todoContainer.innerHTML += `<div id="${todo.id}" class="todo"><input class="checkbox" type="checkbox" checked/><div>${todo.text}</div><img id="${todo.id}" class="delete" src="./images/icon-cross.svg" alt="x to delete todo" /></div>`;
-    });
-  } else {
-    todos.forEach((todo) => {
-      todoContainer.innerHTML += `<div class="todo"><input id="${
-        todo.id
-      }" class="checkbox" type="checkbox" ${
-        todo.status === 'completed' ? 'checked' : ''
-      } /><div>${todo.text}</div><img id="${
-        todo.id
-      }"class="delete" src="./images/icon-cross.svg" alt="x to delete todo" /></div>`;
-    });
-  }
-  updateTodoCounter();
-};
+//     completedTodos.forEach((todo) => {
+//       todoContainer.innerHTML += `<div id="${todo.id}" class="todo"><input class="checkbox" type="checkbox" checked/><div>${todo.text}</div><img id="${todo.id}" class="delete" src="./images/icon-cross.svg" alt="x to delete todo" /></div>`;
+//     });
+//   } else {
+//     todos.forEach((todo) => {
+//       todoContainer.innerHTML += `<div class="todo"><input id="${
+//         todo.id
+//       }" class="checkbox" type="checkbox" ${
+//         todo.status === 'completed' ? 'checked' : ''
+//       } /><div>${todo.text}</div><img id="${
+//         todo.id
+//       }"class="delete" src="./images/icon-cross.svg" alt="x to delete todo" /></div>`;
+//     });
+//   }
+//   updateTodoCounter();
+// };
 
 //Sets todo to completed/incompleted when todo is clicked
 const todoStatusToggle = (e) => {

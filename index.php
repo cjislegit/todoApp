@@ -8,8 +8,6 @@ $db = $database->connect();
 
 //New todo object
 $newTodo = new Todo($db);
-
-var_dump($newTodo->read());
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +40,14 @@ var_dump($newTodo->read());
         <div id="todoList" class="todoList">
             <form id="todoContainer" action="">
                 <?php
-foreach ($newTodo->read() as $key => $value) {
-
-}
-?>
+foreach ($newTodo->read() as $key => $value): ?>
+                <div class="todo"><input id="<?php echo $value[" id"] ?>" class="checkbox" type="checkbox" />
+                    <div>
+                        <?php echo $value["text"] ?>
+                    </div><img id="<?php $value[" id"]?>" class="delete" src="./images/icon-cross.svg" alt="x to delete
+                    todo" />
+                </div>
+                <?php endforeach?>
             </form>
             <div class="todoLeft">
                 <div><span id="todoCounter"></span> items left</div>
