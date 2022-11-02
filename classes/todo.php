@@ -33,4 +33,23 @@
         return $todos;
     }
 
+    //Create todo
+    public function create()
+    {
+        //Query to create todo
+        $query = "INSERT INTO $this->table SET text = :text";
+
+        //Prepare statement
+        $stmt = $this->conn->prepare($query);
+
+        //Clead data
+        $this->text = htmlspecialchars(strip_tags($this->text));
+
+        //Bind data
+        $stmt->bindParam(":text", $this->text);
+
+        //Execute PDO
+        $stmt->execute();
+    }
+
 }
